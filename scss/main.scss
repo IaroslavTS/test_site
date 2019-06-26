@@ -1,6 +1,6 @@
 @import "reset";
 @import "fonts";
-@import "main-menu";
+@import "extend";
 
 
 body {
@@ -14,6 +14,8 @@ body {
 	text-align: left;
 	background-color: #fff;
 	height: 4200px;
+
+	@import "main-menu";
 }
 
 

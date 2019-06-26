@@ -76,3 +76,16 @@ function scaleAnimation() {
 			width: $(`.data-info:eq(${i}) span`).html()}, 3000);
 	}
 };	
+
+/** */
+// $('.block-info').hover(function(){
+// 	$(this).find('.block-info-hover').addClass('active');
+// 	$(this).find('.active').animate({
+// 		width: '150px' ,
+// 		backgroundColor: "rgb(255, 125,125)"
+// 	},1500);
+
+// },function(){
+
+// 	$(this).find('.block-info-hover').removeClass('active');
+// });
