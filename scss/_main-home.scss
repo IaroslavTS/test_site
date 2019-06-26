@@ -1,0 +1,85 @@
+.main-home {
+	height: 699px;
+	justify-content: center;
+	align-content: center;
+	font-family: "Lato";
+
+	.home-title {
+		line-height: 24px;
+
+		.home-title-name {
+			font-size: 24px;
+			letter-spacing: 1.4px;
+			text-align: center;
+			font-weight: bold;
+
+			span {
+				color: $title-color;
+			}
+		}
+
+		.home-title-text {
+			margin: 31px auto 0;
+			width: 694px;
+			font-size: 14px;
+			letter-spacing: 0.56px;
+			text-align: center;
+		}
+	}
+
+	.home-blocks-wrapper {
+		margin-top: 90px;
+		justify-content: space-around;
+
+		.home-block {
+			padding: 0;
+			margin: 10px 0;
+			width: 200px;
+			min-height: 270px;
+			border: 1px solid #ebebeb;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-content: center;
+			align-items: center;
+
+			.block-icon {
+				text-align: center;
+				padding-top: 36px;
+				color: $main-color;
+				
+				.far {
+					font-size: 50px;
+				}
+				
+				.fas {
+					font-size: 45px
+				}
+			}
+			.block-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 149px;
+				text-align: center;
+				width: 100%;
+				
+				.info-title {
+					padding-bottom: 28px;
+					font-size: 14px;
+					letter-spacing: 0.7px;
+					font-weight: bold;
+				}
+				
+				.info-text {
+					@extend %font-light-text;
+					width: 148px;
+					line-height: 20px;
+					color: #373737;
+					font-weight: 200;
+				}
+			}
+		}
+	}
+}

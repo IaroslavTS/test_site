@@ -1,0 +1,126 @@
+.main-product {
+	position: relative;
+	height: 840px;
+	justify-content: center;
+	align-content: space-around;
+	background: url('../img/my_product_bg.png') no-repeat;
+	
+	.main-product-title {
+		background: url('../img/my_product_title.png') center no-repeat;
+		height: 160px;
+
+		.main-product-title-text {
+			padding-top: 47px;
+			font-size: 35px;
+			line-height: 24px;
+			letter-spacing: 1.4px;
+			color: #fff;
+			text-align: center;
+
+			span {
+				color: $text-color-menu-hover;
+			}
+		}
+	}
+
+	.all-products {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		//		align-content: space-between;
+		//		align-items: center;
+
+		.row {
+			padding-bottom: 104px;
+
+			.product {
+				padding: 0;
+				width: 335px;
+				height: 144px;
+				display: flex;
+				justify-content: space-around;
+
+				.product-icon {
+					width: 144px;
+					height: 144px;
+					border-radius: 50%;
+					background: url('../img/product_polifil.png') no-repeat;
+				}
+
+				.type-1 {
+					background-position: -100px -50px;
+				}
+				
+				.type-2 {
+					background-position: -500px -50px;
+				}
+				
+				.type-3 {
+					background-position: -878px -61px;
+				}
+				
+				.type-4 {
+					background-position: -187px -225px;
+				}
+				
+				.type-5 {
+					background-position: -523px -287px;
+				}
+				
+				.type-6 {
+					background-position: -864px -309px;
+				}
+
+			}
+
+			.product-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				
+				.product-title {
+					font-size: 24px;
+					letter-spacing: 1.2px;
+					font-weight: bold;
+
+				}
+
+				.product-desc {
+					font-size: 16px;
+					color: $main-color;
+					line-height: 24px;
+					font-weight: bold;
+				}
+
+				.product-text {
+					width: 165px;
+					@extend %font-light-text;
+				}
+			}
+		}
+	}
+	
+	.product-toggle {
+		position: absolute;
+		bottom: 70px;
+		left: 48%;
+
+		ul {
+			display: flex;
+			width: 50px;
+			justify-content: space-between;
+			
+			a {
+				display: block;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background: #d7d7d7;
+				
+				&:hover {
+					background: $main-color;
+				}
+			}
+		}
+	}
+}

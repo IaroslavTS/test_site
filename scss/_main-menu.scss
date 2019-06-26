@@ -1,0 +1,33 @@
+$hovOpocity: .6;
+$text-color-menu: #fff;
+$text-color-menu-hover: #fff200;
+$main-color: #503392;
+$title-color: #009dda;
+
+%flex-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+%font-light-text {
+	font-size: 13px;
+	letter-spacing: 0.58px;
+	line-height: 24px;
+}
+
+main {
+	height: 100vh;
+	min-height: 600px;
+	position: relative;
+
+	@import "header";
+
+	@import "main-slider";
+
+	@import "main-home";
+
+	@import "main-product";
+
+	@import "main-about";
+}
