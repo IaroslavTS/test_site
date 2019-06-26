@@ -606,7 +606,6 @@ main {
             background: #503392; }
   main .main-about {
     height: 938px;
-    border: 1px solid #000;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
@@ -657,7 +656,8 @@ main {
           main .main-about .main-about-table .main-about-scale li .scale div {
             height: 5px;
             background: darkblue;
-            margin: 1px; }
+            margin: 1px;
+            width: 0; }
 
 body {
   margin: 0 auto;
