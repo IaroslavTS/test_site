@@ -1,7 +1,7 @@
 .main-about {
-	height: 938px;
+	min-height: 938px;
 	justify-content: space-between;
-	align-items: center;
+	align-content: space-around;
 
 	.main-about-table {
 		max-width: 556px;
@@ -10,6 +10,7 @@
 		.main-about-head {
 
 			.main-about-title {
+				margin-top: 30px;
 				font-size: 27px;
 				font-weight: 1.4px;
 				line-height: 24px;
@@ -24,8 +25,8 @@
 
 			.main-about-title-text {
 				@extend %font-light-text;
-				color: #999999;
 				margin: 24px 0 56px;
+				text-align: left;
 
 			}
 		}
@@ -54,7 +55,7 @@
 
 				.scale {
 					margin-top: 20px;
-					width: 545px;
+					max-width: 545px;
 					height: 9px;
 					border: 1px solid #dddddd;
 					
@@ -67,5 +68,12 @@
 				}
 			}
 		}
+	}
+
+.main-about-tablet {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 30px;
 	}
 }

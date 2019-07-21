@@ -1,5 +1,21 @@
-(function () {
+/** Burger tab
+ */
 
+ $('.burger-toggle').on('click', 'input', function() {
+	if (this.checked) {
+		$('.header-menu>ul').animate({top: '70px'},1000);
+	} else {
+		$('.header-menu>ul').animate({top: '-200px'}, 1000);
+	}
+ });
+
+//  $(document).on('click', function() {
+// 	 console.log($('.burger-toggle input').attr('checked'));
+// 		$('.burger-toggle input').attr('checked', 'none');
+// 		$('.header-menu>ul').animate({top: '-200px'}, 1000);
+//  });
+
+(function () {
 /** Slider modul
  * */
 		const slider = (function () {
@@ -62,30 +78,72 @@
 $(window).scroll(function() {
 	let windowScroll = $(document).scrollTop();
 	let trgAboutScroll = $('#trgAbout').offset().top - 10;
-
 	if(windowScroll > trgAboutScroll) {
-		scaleAnimation();
+		scaleAnimation(false);
+	} else {
+		scaleAnimation(true);
 	}
 });
 
 /**Scale animation
  *  */
-function scaleAnimation() {
-	for (let i = 0; i < 4; i++) {
-		$(`.scale:eq(${i}) div`).delay(`${i+1}000`).animate({
-			width: $(`.data-info:eq(${i}) span`).html()}, 3000);
+function scaleAnimation(toggle) {
+	if (!toggle) {
+		for (let i = 0; i < 4; i++) {
+			$(`.scale:eq(${i}) div`).delay(`${i+1}000`).animate({
+				width: $(`.data-info:eq(${i}) span`).html()}, 3000);
+		} 
+	} else {
+		for (let i = 0; i < 4; i++) {
+			$(`.scale:eq(${i}) div`).animate({
+				width: '0px'},1000);
+		} 
 	}
 };	
 
-/** */
-// $('.block-info').hover(function(){
-// 	$(this).find('.block-info-hover').addClass('active');
-// 	$(this).find('.active').animate({
-// 		width: '150px' ,
-// 		backgroundColor: "rgb(255, 125,125)"
-// 	},1500);
 
-// },function(){
 
-// 	$(this).find('.block-info-hover').removeClass('active');
-// });
+/**  Google maps
+ **/
+
+	let map;
+
+/** Map function 
+ */
+function initMap() {
+
+	map = new google.maps.Map(document.getElementById('map'), {
+
+		center: {lat: 49.844165, lng: 24.026225},
+		zoom: 17
+
+		// Добавляем свои стили для отображения карты
+		// styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
+	});
+
+	var marker = new google.maps.Marker({
+	    position: {lat: 49.843321, lng: 24.026648}, 
+	    map: map,
+	    title: 'Най най найцентральніший фонтан міста Лева',
+	    icon: '../img/fontaine.png'
+	});
+
+	var contentString = '<div id="content">'+
+	      '<div id="siteNotice">'+
+	      '</div>'+
+	      '<h1 id="firstHeading" class="firstHeading">Центральний фонтан ЛЬвова</h1>'+
+	      '<div id="bodyContent">'+
+	      '<p>Головний фонтан міста Львова, що знаходиться на центальній площі' +
+	      'перед оперним театром. Місце зустрічи багатьох закоханих.</p>'+
+	      '</div>'+
+	      '</div>';
+
+	var infowindow = new google.maps.InfoWindow({
+	   content: contentString,
+	   maxWidth: 300
+	});
+
+	marker.addListener('click', function() {
+		infowindow.open(map, marker);
+	});
+}

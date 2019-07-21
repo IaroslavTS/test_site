@@ -3,6 +3,7 @@ $text-color-menu: #fff;
 $text-color-menu-hover: #fff200;
 $main-color: #503392;
 $title-color: #009dda;
+$text-next-title: #999999;
 
 %flex-column {
 	display: flex;
@@ -14,12 +15,15 @@ $title-color: #009dda;
 	font-size: 13px;
 	letter-spacing: 0.58px;
 	line-height: 24px;
+	color: $text-next-title;
+	text-align: center;
 }
 
 main {
-	height: 100vh;
+	margin: 0 auto;
 	min-height: 600px;
 	position: relative;
+	width: 100%;
 
 	@import "header";
 
@@ -30,4 +34,10 @@ main {
 	@import "main-product";
 
 	@import "main-about";
+
+	@import "footer";
+
+	@import "media";
 }
+
+
