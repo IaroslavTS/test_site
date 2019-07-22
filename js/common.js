@@ -87,19 +87,12 @@ $(window).scroll(function() {
 
 /**Scale animation
  *  */
-function scaleAnimation(toggle) {
-	if (!toggle) {
+function scaleAnimation() {
 		for (let i = 0; i < 4; i++) {
 			$(`.scale:eq(${i}) div`).delay(`${i+1}000`).animate({
 				width: $(`.data-info:eq(${i}) span`).html()}, 3000);
 		} 
-	} else {
-		for (let i = 0; i < 4; i++) {
-			$(`.scale:eq(${i}) div`).animate({
-				width: '0px'},1000);
-		} 
-	}
-};	
+	};	
 
 
 
